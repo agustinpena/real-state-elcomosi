@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Altamira Land — Mexican Land for European Buyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1a2332;
+        --ink-soft: #3d4a5c;
+        --muted: #7a8699;
+        --line: #e3e6ec;
+        --bg: #faf9f7;
+        --white: #ffffff;
+        --accent: #8a6d3b;
+        --accent-soft: #f2ede4;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.65;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 500;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ---------- NAV ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(250, 249, 247, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 36px;
+        align-items: center;
+      }
+      .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--ink-soft);
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      .nav-cta {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        background: var(--ink);
+        color: var(--white);
+        padding: 10px 22px;
+        border-radius: 2px;
+        transition: background 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--accent);
+        color: var(--white);
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--ink);
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        padding: 110px 0 90px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, #faf9f7 0%, #f4f2ee 100%);
+      }
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 24px;
+      }
+      .hero h1 {
+        font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+        max-width: 16ch;
+        margin-bottom: 28px;
+      }
+      .hero p {
+        font-size: 1.125rem;
+        color: var(--ink-soft);
+        max-width: 56ch;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 14px 30px;
+        border-radius: 2px;
+        transition: all 0.2s;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .btn-primary:hover {
+        background: var(--accent);
+      }
+      .btn-ghost {
+        border: 1px solid var(--line);
+        color: var(--ink);
+        background: var(--white);
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* ---------- TRUST BAR ---------- */
+      .trust {
+        padding: 56px 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--line);
+      }
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+      }
+      .trust-item h3 {
+        font-size: 1.375rem;
+        margin-bottom: 10px;
+      }
+      .trust-item p {
+        font-size: 0.9375rem;
+        color: var(--muted);
+        font-weight: 300;
+      }
+
+      /* ---------- SECTION ---------- */
+      section {
+        padding: 96px 0;
+      }
+      .section-head {
+        margin-bottom: 56px;
+      }
+      .section-head h2 {
+        font-size: clamp(2rem, 3.5vw, 2.75rem);
+        max-width: 22ch;
+        margin-bottom: 16px;
+      }
+      .section-head p {
+        font-size: 1.0625rem;
+        color: var(--muted);
+        max-width: 52ch;
+        font-weight: 300;
+      }
+
+      /* ---------- PROCESS ---------- */
+      .process {
+        background: var(--bg);
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--line);
+      }
+      .step {
+        padding: 36px 28px 36px 0;
+        border-right: 1px solid var(--line);
+      }
+      .step:last-child {
+        border-right: none;
+      }
+      .step-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.25rem;
+        color: var(--accent-soft);
+        font-weight: 600;
+        margin-bottom: 14px;
+        line-height: 1;
+      }
+      .step h3 {
+        font-size: 1.125rem;
+        margin-bottom: 8px;
+      }
+      .step p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        font-weight: 300;
+      }
+
+      /* ---------- REGIONS ---------- */
+      .regions {
+        background: var(--white);
+      }
+      .region-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .region-card {
+        border: 1px solid var(--line);
+        border-radius: 2px;
+        overflow: hidden;
+        transition: all 0.3s;
+        cursor: pointer;
+        background: var(--white);
+      }
+      .region-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(26, 35, 50, 0.07);
+      }
+      .region-img {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        background-color: #e8e4dd;
+      }
+      .r1 {
+        background-image: url("https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80");
+      }
+      .r2 {
+        background-image: url("https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=800&q=80");
+      }
+      .r3 {
+        background-image: url("https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80");
+      }
+      .region-body {
+        padding: 26px 24px 28px;
+      }
+      .region-body h3 {
+        font-size: 1.375rem;
+        margin-bottom: 6px;
+      }
+      .region-body p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        font-weight: 300;
+        margin-bottom: 14px;
+      }
+      .region-meta {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      /* ---------- LEGAL BANNER ---------- */
+      .legal {
+        background: var(--ink);
+        color: var(--white);
+        padding: 80px 0;
+      }
+      .legal-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .legal h2 {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        color: var(--white);
+        margin-bottom: 20px;
+      }
+      .legal p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 32px;
+      }
+      .legal .btn-primary {
+        background: var(--accent);
+        color: var(--white);
+      }
+      .legal .btn-primary:hover {
+        background: #a0813f;
+      }
+      .legal-list {
+        list-style: none;
+      }
+      .legal-list li {
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 0.9375rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .legal-list li:last-child {
+        border-bottom: none;
+      }
+      .legal-list .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+        margin-top: 9px;
+      }
+      .legal-list strong {
+        display: block;
+        margin-bottom: 2px;
+        font-weight: 500;
+      }
+      .legal-list span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+        font-weight: 300;
+      }
+
+      /* ---------- LISTINGS ---------- */
+      .listings {
+        background: var(--bg);
+      }
+      .listing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .listing-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 2px;
+        overflow: hidden;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .listing-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 12px 32px rgba(26, 35, 50, 0.07);
+      }
+      .listing-img {
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-color: #e8e4dd;
+      }
+      .l1 {
+        background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80");
+      }
+      .l2 {
+        background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80");
+      }
+      .l3 {
+        background-image: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80");
+      }
+      .badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(26, 35, 50, 0.9);
+        color: var(--white);
+        font-size: 0.6875rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 5px 11px;
+        border-radius: 2px;
+      }
+      .listing-body {
+        padding: 22px 22px 24px;
+      }
+      .listing-body h3 {
+        font-size: 1.1875rem;
+        margin-bottom: 4px;
+      }
+      .listing-loc {
+        font-size: 0.8125rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+        font-weight: 300;
+      }
+      .listing-specs {
+        display: flex;
+        gap: 20px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        font-size: 0.8125rem;
+      }
+      .spec-label {
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        margin-bottom: 2px;
+        font-weight: 500;
+      }
+      .spec-val {
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      /* ---------- CTA ---------- */
+      .cta {
+        background: var(--white);
+        text-align: center;
+        padding: 100px 0;
+        border-top: 1px solid var(--line);
+      }
+      .cta h2 {
+        font-size: clamp(2rem, 3.5vw, 2.75rem);
+        max-width: 20ch;
+        margin: 0 auto 20px;
+      }
+      .cta p {
+        color: var(--muted);
+        font-size: 1.0625rem;
+        max-width: 48ch;
+        margin: 0 auto 36px;
+        font-weight: 300;
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--ink);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 64px 0 32px;
+        font-size: 0.875rem;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+      }
+      .footer-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        color: var(--white);
+        margin-bottom: 14px;
+        font-weight: 600;
+      }
+      .footer-brand span {
+        color: var(--accent);
+      }
+      .footer-col h4 {
+        color: var(--white);
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+      }
+      .footer-col a {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(255, 255, 255, 0.55);
+        font-weight: 300;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--accent);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.8125rem;
+        font-weight: 300;
+      }
+
+      /* ---------- WHATSAPP ---------- */
+      .whatsapp {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 200;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+        transition: transform 0.2s;
+      }
+      .whatsapp:hover {
+        transform: scale(1.08);
+      }
+      .whatsapp svg {
+        width: 28px;
+        height: 28px;
+        fill: white;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 900px) {
+        .wrap {
+          padding: 0 22px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .trust-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .steps {
+          grid-template-columns: 1fr 1fr;
+        }
+        .step {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+          padding: 28px 0;
+        }
+        .step:nth-child(odd) {
+          border-right: 1px solid var(--line);
+          padding-right: 24px;
+        }
+        .region-grid,
+        .listing-grid {
+          grid-template-columns: 1fr;
+        }
+        .legal-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .hero {
+          padding: 72px 0 56px;
+        }
+      }
+      @media (max-width: 520px) {
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .step {
+          border-right: none !important;
+          padding-right: 0;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-actions {
+          flex-direction: column;
+        }
+        .btn {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ NAV ============ -->
+    <header>
+      <div class="wrap">
+        <nav>
+          <a href="#" class="logo">
+            Altamira
+            <span>.</span>
+          </a>
+          <div class="nav-links">
+            <a href="#process">How It Works</a>
+            <a href="#regions">Regions</a>
+            <a href="#listings">Available Land</a>
+            <a href="#legal">Legal Guide</a>
+            <a href="#contact" class="nav-cta">Book a Consultation</a>
+          </div>
+          <button class="menu-toggle" aria-label="Menu">☰</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Mexican Land · For European Buyers</div>
+        <h1>Own Mexican land with complete legal clarity.</h1>
+        <p>
+          We help European buyers acquire verified, regularized private land in
+          Mexico—navigating fideicomiso, due diligence, and closing, so you
+          never sign on uncertain ground.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+          <a href="#process" class="btn btn-ghost">See Our Process</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST BAR ============ -->
+    <div class="trust">
+      <div class="wrap">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <h3>Regularized private land only</h3>
+            <p>
+              Every plot we list holds clear title (escritura) and verified
+              boundary records. We do not touch ejido land.
+            </p>
+          </div>
+          <div class="trust-item">
+            <h3>Fideicomiso handled end-to-end</h3>
+            <p>
+              We work with licensed Mexican notaries and banks to set up your
+              trust in the restricted zone—step by step.
+            </p>
+          </div>
+          <div class="trust-item">
+            <h3>Built for European buyers</h3>
+            <p>
+              English, Spanish, and French support. Clear documentation. No
+              hidden costs. No pressure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>A process designed to remove uncertainty.</h2>
+          <p>
+            Land in Mexico is safe to buy—when the paperwork is done correctly.
+            Here is how we guide you from first call to keys.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3>Consultation</h3>
+            <p>
+              We discuss your goals, budget, and preferred region. No
+              obligation.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3>Shortlist</h3>
+            <p>
+              We present verified plots with full documentation and due
+              diligence packets.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3>Legal Review</h3>
+            <p>
+              Our notary partners confirm title, boundaries, and trust setup
+              before you commit.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h3>Closing</h3>
+            <p>
+              You receive your escritura or fideicomiso—fully registered and
+              protected.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGIONS ============ -->
+    <section class="regions" id="regions">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Where our buyers are investing.</h2>
+          <p>
+            We focus on a small number of regions where land title is clear,
+            infrastructure is reliable, and European demand is growing.
+          </p>
+        </div>
+        <div class="region-grid">
+          <div class="region-card">
+            <div class="region-img r1"></div>
+            <div class="region-body">
+              <h3>Riviera Maya</h3>
+              <p>
+                Tulum, Playa del Carmen, Bacalar. Strong short-term rental
+                yields and consistent European demand.
+              </p>
+              <div class="region-meta">Coastal · Fideicomiso</div>
+            </div>
+          </div>
+          <div class="region-card">
+            <div class="region-img r2"></div>
+            <div class="region-body">
+              <h3>Los Cabos & Baja</h3>
+              <p>
+                Premium coastal land with established infrastructure and a
+                mature luxury market.
+              </p>
+              <div class="region-meta">Coastal · Fideicomiso</div>
+            </div>
+          </div>
+          <div class="region-card">
+            <div class="region-img r3"></div>
+            <div class="region-body">
+              <h3>Lake Chapala & Central Highlands</h3>
+              <p>
+                Inland, mild climate, large expat community. Private land
+                outside the restricted zone.
+              </p>
+              <div class="region-meta">Inland · Direct Title</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LEGAL ============ -->
+    <div class="legal" id="legal">
+      <div class="wrap">
+        <div class="legal-grid">
+          <div>
+            <h2>Mexican land law, explained plainly.</h2>
+            <p>
+              Most hesitation around Mexican land comes from not understanding
+              the rules. We put the key facts in front of you before you commit
+              a single euro.
+            </p>
+            <a href="#contact" class="btn btn-primary">
+              Request the Legal Guide
+            </a>
+          </div>
+          <ul class="legal-list">
+            <li>
+              <div class="dot"></div>
+              <div>
+                <strong>Fideicomiso (Bank Trust)</strong>
+                <span>
+                  Required for land within 50km of coast or 100km of border. You
+                  hold full ownership rights through a Mexican bank.
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div>
+                <strong>Ejido vs. Private Land</strong>
+                <span>
+                  Ejido is communal land and a common trap for foreign buyers.
+                  We only work with regularized private property.
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div>
+                <strong>Uso de Suelo (Land Use)</strong>
+                <span>
+                  Zoning determines what you can build. We verify this before
+                  any listing reaches you.
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div>
+                <strong>Closing Costs & Taxes</strong>
+                <span>
+                  Expect roughly 4–7% in acquisition costs. We provide a full
+                  breakdown upfront.
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ LISTINGS ============ -->
+    <section class="listings" id="listings">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Available land, verified.</h2>
+          <p>
+            A selection of currently available plots. Each comes with a due
+            diligence packet on request.
+          </p>
+        </div>
+        <div class="listing-grid">
+          <div class="listing-card">
+            <div class="listing-img l1">
+              <span class="badge">Verified Title</span>
+            </div>
+            <div class="listing-body">
+              <h3>Coastal Plot · Tulum</h3>
+              <div class="listing-loc">Quintana Roo, Mexico</div>
+              <div class="listing-specs">
+                <div>
+                  <div class="spec-label">Size</div>
+                  <div class="spec-val">2,400 m²</div>
+                </div>
+                <div>
+                  <div class="spec-label">Title</div>
+                  <div class="spec-val">Fideicomiso</div>
+                </div>
+                <div>
+                  <div class="spec-label">From</div>
+                  <div class="spec-val">€185,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="listing-card">
+            <div class="listing-img l2">
+              <span class="badge">Verified Title</span>
+            </div>
+            <div class="listing-body">
+              <h3>Hillside Land · Los Cabos</h3>
+              <div class="listing-loc">Baja California Sur, Mexico</div>
+              <div class="listing-specs">
+                <div>
+                  <div class="spec-label">Size</div>
+                  <div class="spec-val">1,800 m²</div>
+                </div>
+                <div>
+                  <div class="spec-label">Title</div>
+                  <div class="spec-val">Fideicomiso</div>
+                </div>
+                <div>
+                  <div class="spec-label">From</div>
+                  <div class="spec-val">€240,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="listing-card">
+            <div class="listing-img l3">
+              <span class="badge">Verified Title</span>
+            </div>
+            <div class="listing-body">
+              <h3>Lakeview Plot · Chapala</h3>
+              <div class="listing-loc">Jalisco, Mexico</div>
+              <div class="listing-specs">
+                <div>
+                  <div class="spec-label">Size</div>
+                  <div class="spec-val">3,200 m²</div>
+                </div>
+                <div>
+                  <div class="spec-label">Title</div>
+                  <div class="spec-val">Direct Deed</div>
+                </div>
+                <div>
+                  <div class="spec-label">From</div>
+                  <div class="spec-val">€95,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <h2>Start with a conversation, not a commitment.</h2>
+        <p>
+          Tell us what you are looking for. We will send you a shortlist, a
+          legal overview, and a clear next step—within 48 hours.
+        </p>
+        <a href="#" class="btn btn-primary">Book a Consultation</a>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">
+              Altamira
+              <span>.</span>
+            </div>
+            <p style="max-width:34ch;font-weight:300;line-height:1.7;">
+              Verified Mexican land for European buyers. Clear title. Clear
+              process. Clear communication.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="#regions">Regions</a>
+            <a href="#listings">Available Land</a>
+            <a href="#process">How It Works</a>
+          </div>
+          <div class="footer-col">
+            <h4>Learn</h4>
+            <a href="#legal">Legal Guide</a>
+            <a href="#">Fideicomiso FAQ</a>
+            <a href="#">Buyer's Checklist</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="#">hello@altamira.land</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">Book a Call</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Altamira Land. All rights reserved.</span>
+          <span>Privacy Notice (Aviso de Privacidad) · Terms</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ WHATSAPP ============ -->
+    <a href="#" class="whatsapp" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        />
+      </svg>
+    </a>
+  </body>
+</html>
