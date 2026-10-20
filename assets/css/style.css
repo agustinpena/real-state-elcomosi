@@ -1,0 +1,756 @@
+/* ============================================================
+   El Comosi — Hoja de estilos principal
+   Cambia la marca en un solo lugar: --brand-name (texto en HTML)
+   ============================================================ */
+:root {
+  --ink: #1f2a24;
+  --ink-soft: #3f4d45;
+  --muted: #7c8a80;
+  --line: #e2e6e1;
+  --bg: #faf9f6;
+  --white: #ffffff;
+  --accent: #3f6b4f; /* verde selva */
+  --accent-dark: #2e5239;
+  --sand: #e8dfc9;
+  --sand-soft: #f3eee0;
+  --danger: #a3402f;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* ---------- NAV ---------- */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 249, 246, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+nav.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand img {
+  height: 38px;
+  width: auto;
+}
+.brand-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.brand-text span {
+  color: var(--accent);
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.lang-switch a {
+  padding: 4px 7px;
+  border-radius: 2px;
+  color: var(--muted);
+}
+.lang-switch a.active {
+  background: var(--ink);
+  color: var(--white);
+}
+.nav-cta {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background: var(--ink);
+  color: var(--white);
+  padding: 11px 22px;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.nav-cta:hover {
+  background: var(--accent);
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+/* ---------- BOTONES ---------- */
+.btn {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 14px 30px;
+  border-radius: 2px;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+.btn-dark {
+  background: var(--ink);
+  color: var(--white);
+}
+.btn-dark:hover {
+  background: var(--accent);
+}
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--ink);
+  background: var(--white);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-wa {
+  background: #25d366;
+  color: #fff;
+}
+.btn-wa:hover {
+  background: #1eb857;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  padding: 96px 0 80px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #faf9f6 0%, #f2efe7 100%);
+  position: relative;
+  overflow: hidden;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 5.2vw, 4rem);
+  max-width: 17ch;
+  margin-bottom: 26px;
+}
+.hero p {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  margin-bottom: 38px;
+  font-weight: 300;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hero-facts {
+  display: flex;
+  gap: 44px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.hero-fact strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+.hero-fact span {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ---------- SECCIONES ---------- */
+section {
+  padding: 88px 0;
+}
+.section-head {
+  margin-bottom: 52px;
+  max-width: 64ch;
+}
+.section-head h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.65rem);
+  margin-bottom: 14px;
+}
+.section-head p {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+.bg-white {
+  background: var(--white);
+}
+.bg-sand {
+  background: var(--sand-soft);
+}
+
+/* ---------- TRUST ---------- */
+.trust-bar {
+  padding: 52px 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px;
+}
+.trust-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.trust-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.trust-item h3 {
+  font-size: 1.1875rem;
+  margin-bottom: 6px;
+}
+.trust-item p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* ---------- PROCESO ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+.step {
+  padding: 34px 26px 34px 0;
+  border-right: 1px solid var(--line);
+}
+.step:last-child {
+  border-right: none;
+}
+.step-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.1rem;
+  color: var(--sand);
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.step h3 {
+  font-size: 1.0625rem;
+  margin-bottom: 7px;
+}
+.step p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* ---------- CARDS TERRENOS ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 14px 36px rgba(31, 42, 36, 0.08);
+  transform: translateY(-2px);
+}
+.card-img {
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+  background-color: #ddd8cc;
+  position: relative;
+}
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(31, 42, 36, 0.92);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+.card-body {
+  padding: 22px 22px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-body h3 {
+  font-size: 1.1875rem;
+  margin-bottom: 4px;
+}
+.card-loc {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.card-specs {
+  display: flex;
+  gap: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  margin-top: auto;
+  font-size: 0.8125rem;
+  flex-wrap: wrap;
+}
+.spec-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+.spec-val {
+  font-weight: 500;
+  color: var(--ink);
+}
+.price-tag {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- LEGAL / ANTI-FRAUDE ---------- */
+.band-dark {
+  background: var(--ink);
+  color: var(--white);
+  padding: 76px 0;
+}
+.band-dark h2 {
+  color: var(--white);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 18px;
+}
+.band-dark p {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.band-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.check-list {
+  list-style: none;
+}
+.check-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 0.9375rem;
+}
+.check-list li:last-child {
+  border-bottom: none;
+}
+.check-list .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sand);
+  flex-shrink: 0;
+  margin-top: 9px;
+}
+.check-list strong {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+.check-list span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+/* ---------- NOTARIO / EQUIPO ---------- */
+.person {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 26px;
+}
+.person-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sand-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.person h3 {
+  font-size: 1.1875rem;
+  margin-bottom: 2px;
+}
+.person .role {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.person p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* ---------- CONTACTO ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.form-field {
+  margin-bottom: 20px;
+}
+.form-field label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--ink-soft);
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  background: var(--white);
+  color: var(--ink);
+  transition: border 0.2s;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 30px;
+  margin-bottom: 18px;
+}
+.contact-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+}
+.contact-card a {
+  color: var(--accent);
+  font-weight: 500;
+}
+.contact-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  background: var(--white);
+  text-align: center;
+  padding: 92px 0;
+  border-top: 1px solid var(--line);
+}
+.cta h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.65rem);
+  max-width: 22ch;
+  margin: 0 auto 18px;
+}
+.cta p {
+  color: var(--muted);
+  font-size: 1.0625rem;
+  max-width: 50ch;
+  margin: 0 auto 34px;
+  font-weight: 300;
+}
+
+/* ---------- FOOTER ---------- */
+footer.site-footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 60px 0 28px;
+  font-size: 0.875rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 44px;
+  margin-bottom: 44px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.footer-brand img {
+  height: 32px;
+}
+.footer-brand span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  color: var(--white);
+  font-weight: 600;
+}
+.footer-col h4 {
+  color: var(--white);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+.footer-col a {
+  display: block;
+  margin-bottom: 9px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 300;
+  transition: color 0.2s;
+}
+.footer-col a:hover {
+  color: var(--sand);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 300;
+}
+
+/* ---------- WHATSAPP FLOAT ---------- */
+.whatsapp {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 200;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s;
+}
+.whatsapp:hover {
+  transform: scale(1.08);
+}
+.whatsapp svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .wrap {
+    padding: 0 22px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .step {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 26px 0;
+  }
+  .step:nth-child(odd) {
+    border-right: 1px solid var(--line);
+    padding-right: 22px;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .band-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  section {
+    padding: 62px 0;
+  }
+  .hero {
+    padding: 68px 0 54px;
+  }
+  .hero-facts {
+    gap: 28px;
+  }
+}
+@media (max-width: 520px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .step {
+    border-right: none !important;
+    padding-right: 0;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-actions {
+    flex-direction: column;
+  }
+  .btn {
+    text-align: center;
+  }
+  .nav-right .lang-switch {
+    display: none;
+  }
+}

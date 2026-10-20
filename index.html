@@ -1,639 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Altamira Land — Mexican Land for European Buyers</title>
+    <title>Terrenos en Yucatán para compradores europeos | El Comosi</title>
+    <meta
+      name="description"
+      content="Terrenos de 300 m² en Tekom e Izamal, Yucatán, desde €7,245. Propiedad privada con escritura, fuera de la zona restringida: sin fideicomiso. Notaría 140. Atención en español, inglés y francés."
+    />
+    <link rel="canonical" href="https://www.elcomosi.mx/" />
+    <link rel="alternate" hreflang="es" href="https://www.elcomosi.mx/" />
+    <link rel="alternate" hreflang="en" href="https://www.elcomosi.mx/en/" />
+    <link rel="alternate" hreflang="fr" href="https://www.elcomosi.mx/fr/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.elcomosi.mx/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Terrenos en Yucatán para compradores europeos | El Comosi"
+    />
+    <meta
+      property="og:description"
+      content="Propiedad privada con escritura en Tekom e Izamal, Yucatán. Desde €7,245. Sin fideicomiso. Notaría 140."
+    />
+    <meta property="og:url" content="https://www.elcomosi.mx/" />
+    <meta
+      property="og:image"
+      content="https://www.elcomosi.mx/assets/img/og-home.jpg"
+    />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_FR" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --ink: #1a2332;
-        --ink-soft: #3d4a5c;
-        --muted: #7a8699;
-        --line: #e3e6ec;
-        --bg: #faf9f7;
-        --white: #ffffff;
-        --accent: #8a6d3b;
-        --accent-soft: #f2ede4;
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family:
-          "Inter",
-          -apple-system,
-          sans-serif;
-        color: var(--ink);
-        background: var(--bg);
-        line-height: 1.65;
-        font-weight: 400;
-        -webkit-font-smoothing: antialiased;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-weight: 500;
-        line-height: 1.15;
-        letter-spacing: -0.01em;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .wrap {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 32px;
-      }
-
-      /* ---------- NAV ---------- */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: rgba(250, 249, 247, 0.92);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--line);
-      }
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 72px;
-      }
-      .logo {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-      }
-      .logo span {
-        color: var(--accent);
-      }
-      .nav-links {
-        display: flex;
-        gap: 36px;
-        align-items: center;
-      }
-      .nav-links a {
-        font-size: 0.875rem;
-        font-weight: 400;
-        color: var(--ink-soft);
-        transition: color 0.2s;
-      }
-      .nav-links a:hover {
-        color: var(--accent);
-      }
-      .nav-cta {
-        font-size: 0.8125rem;
-        font-weight: 500;
-        background: var(--ink);
-        color: var(--white);
-        padding: 10px 22px;
-        border-radius: 2px;
-        transition: background 0.2s;
-      }
-      .nav-cta:hover {
-        background: var(--accent);
-        color: var(--white);
-      }
-      .menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--ink);
-      }
-
-      /* ---------- HERO ---------- */
-      .hero {
-        padding: 110px 0 90px;
-        border-bottom: 1px solid var(--line);
-        background: linear-gradient(180deg, #faf9f7 0%, #f4f2ee 100%);
-      }
-      .eyebrow {
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 24px;
-      }
-      .hero h1 {
-        font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-        max-width: 16ch;
-        margin-bottom: 28px;
-      }
-      .hero p {
-        font-size: 1.125rem;
-        color: var(--ink-soft);
-        max-width: 56ch;
-        margin-bottom: 40px;
-        font-weight: 300;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-      .btn {
-        display: inline-block;
-        font-size: 0.875rem;
-        font-weight: 500;
-        padding: 14px 30px;
-        border-radius: 2px;
-        transition: all 0.2s;
-      }
-      .btn-primary {
-        background: var(--ink);
-        color: var(--white);
-      }
-      .btn-primary:hover {
-        background: var(--accent);
-      }
-      .btn-ghost {
-        border: 1px solid var(--line);
-        color: var(--ink);
-        background: var(--white);
-      }
-      .btn-ghost:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-
-      /* ---------- TRUST BAR ---------- */
-      .trust {
-        padding: 56px 0;
-        background: var(--white);
-        border-bottom: 1px solid var(--line);
-      }
-      .trust-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 48px;
-      }
-      .trust-item h3 {
-        font-size: 1.375rem;
-        margin-bottom: 10px;
-      }
-      .trust-item p {
-        font-size: 0.9375rem;
-        color: var(--muted);
-        font-weight: 300;
-      }
-
-      /* ---------- SECTION ---------- */
-      section {
-        padding: 96px 0;
-      }
-      .section-head {
-        margin-bottom: 56px;
-      }
-      .section-head h2 {
-        font-size: clamp(2rem, 3.5vw, 2.75rem);
-        max-width: 22ch;
-        margin-bottom: 16px;
-      }
-      .section-head p {
-        font-size: 1.0625rem;
-        color: var(--muted);
-        max-width: 52ch;
-        font-weight: 300;
-      }
-
-      /* ---------- PROCESS ---------- */
-      .process {
-        background: var(--bg);
-      }
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        border-top: 1px solid var(--line);
-      }
-      .step {
-        padding: 36px 28px 36px 0;
-        border-right: 1px solid var(--line);
-      }
-      .step:last-child {
-        border-right: none;
-      }
-      .step-num {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.25rem;
-        color: var(--accent-soft);
-        font-weight: 600;
-        margin-bottom: 14px;
-        line-height: 1;
-      }
-      .step h3 {
-        font-size: 1.125rem;
-        margin-bottom: 8px;
-      }
-      .step p {
-        font-size: 0.875rem;
-        color: var(--muted);
-        font-weight: 300;
-      }
-
-      /* ---------- REGIONS ---------- */
-      .regions {
-        background: var(--white);
-      }
-      .region-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-      }
-      .region-card {
-        border: 1px solid var(--line);
-        border-radius: 2px;
-        overflow: hidden;
-        transition: all 0.3s;
-        cursor: pointer;
-        background: var(--white);
-      }
-      .region-card:hover {
-        border-color: var(--accent);
-        transform: translateY(-3px);
-        box-shadow: 0 12px 32px rgba(26, 35, 50, 0.07);
-      }
-      .region-img {
-        height: 200px;
-        background-size: cover;
-        background-position: center;
-        background-color: #e8e4dd;
-      }
-      .r1 {
-        background-image: url("https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80");
-      }
-      .r2 {
-        background-image: url("https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=800&q=80");
-      }
-      .r3 {
-        background-image: url("https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80");
-      }
-      .region-body {
-        padding: 26px 24px 28px;
-      }
-      .region-body h3 {
-        font-size: 1.375rem;
-        margin-bottom: 6px;
-      }
-      .region-body p {
-        font-size: 0.875rem;
-        color: var(--muted);
-        font-weight: 300;
-        margin-bottom: 14px;
-      }
-      .region-meta {
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-
-      /* ---------- LEGAL BANNER ---------- */
-      .legal {
-        background: var(--ink);
-        color: var(--white);
-        padding: 80px 0;
-      }
-      .legal-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 64px;
-        align-items: center;
-      }
-      .legal h2 {
-        font-size: clamp(1.75rem, 3vw, 2.5rem);
-        color: var(--white);
-        margin-bottom: 20px;
-      }
-      .legal p {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 1rem;
-        font-weight: 300;
-        margin-bottom: 32px;
-      }
-      .legal .btn-primary {
-        background: var(--accent);
-        color: var(--white);
-      }
-      .legal .btn-primary:hover {
-        background: #a0813f;
-      }
-      .legal-list {
-        list-style: none;
-      }
-      .legal-list li {
-        padding: 16px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        font-size: 0.9375rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 14px;
-      }
-      .legal-list li:last-child {
-        border-bottom: none;
-      }
-      .legal-list .dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--accent);
-        flex-shrink: 0;
-        margin-top: 9px;
-      }
-      .legal-list strong {
-        display: block;
-        margin-bottom: 2px;
-        font-weight: 500;
-      }
-      .legal-list span {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.875rem;
-        font-weight: 300;
-      }
-
-      /* ---------- LISTINGS ---------- */
-      .listings {
-        background: var(--bg);
-      }
-      .listing-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-      }
-      .listing-card {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 2px;
-        overflow: hidden;
-        transition: all 0.3s;
-        cursor: pointer;
-      }
-      .listing-card:hover {
-        border-color: var(--accent);
-        box-shadow: 0 12px 32px rgba(26, 35, 50, 0.07);
-      }
-      .listing-img {
-        height: 180px;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        background-color: #e8e4dd;
-      }
-      .l1 {
-        background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80");
-      }
-      .l2 {
-        background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80");
-      }
-      .l3 {
-        background-image: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80");
-      }
-      .badge {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        background: rgba(26, 35, 50, 0.9);
-        color: var(--white);
-        font-size: 0.6875rem;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        padding: 5px 11px;
-        border-radius: 2px;
-      }
-      .listing-body {
-        padding: 22px 22px 24px;
-      }
-      .listing-body h3 {
-        font-size: 1.1875rem;
-        margin-bottom: 4px;
-      }
-      .listing-loc {
-        font-size: 0.8125rem;
-        color: var(--muted);
-        margin-bottom: 16px;
-        font-weight: 300;
-      }
-      .listing-specs {
-        display: flex;
-        gap: 20px;
-        padding-top: 16px;
-        border-top: 1px solid var(--line);
-        font-size: 0.8125rem;
-      }
-      .spec-label {
-        font-size: 0.6875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--muted);
-        margin-bottom: 2px;
-        font-weight: 500;
-      }
-      .spec-val {
-        font-weight: 500;
-        color: var(--ink);
-      }
-
-      /* ---------- CTA ---------- */
-      .cta {
-        background: var(--white);
-        text-align: center;
-        padding: 100px 0;
-        border-top: 1px solid var(--line);
-      }
-      .cta h2 {
-        font-size: clamp(2rem, 3.5vw, 2.75rem);
-        max-width: 20ch;
-        margin: 0 auto 20px;
-      }
-      .cta p {
-        color: var(--muted);
-        font-size: 1.0625rem;
-        max-width: 48ch;
-        margin: 0 auto 36px;
-        font-weight: 300;
-      }
-
-      /* ---------- FOOTER ---------- */
-      footer {
-        background: var(--ink);
-        color: rgba(255, 255, 255, 0.6);
-        padding: 64px 0 32px;
-        font-size: 0.875rem;
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 48px;
-        margin-bottom: 48px;
-      }
-      .footer-brand {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.5rem;
-        color: var(--white);
-        margin-bottom: 14px;
-        font-weight: 600;
-      }
-      .footer-brand span {
-        color: var(--accent);
-      }
-      .footer-col h4 {
-        color: var(--white);
-        font-size: 0.8125rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-bottom: 16px;
-        font-weight: 500;
-        font-family: "Inter", sans-serif;
-      }
-      .footer-col a {
-        display: block;
-        margin-bottom: 10px;
-        color: rgba(255, 255, 255, 0.55);
-        font-weight: 300;
-        transition: color 0.2s;
-      }
-      .footer-col a:hover {
-        color: var(--accent);
-      }
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 24px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-        font-size: 0.8125rem;
-        font-weight: 300;
-      }
-
-      /* ---------- WHATSAPP ---------- */
-      .whatsapp {
-        position: fixed;
-        bottom: 28px;
-        right: 28px;
-        z-index: 200;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: #25d366;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
-        transition: transform 0.2s;
-      }
-      .whatsapp:hover {
-        transform: scale(1.08);
-      }
-      .whatsapp svg {
-        width: 28px;
-        height: 28px;
-        fill: white;
-      }
-
-      /* ---------- RESPONSIVE ---------- */
-      @media (max-width: 900px) {
-        .wrap {
-          padding: 0 22px;
-        }
-        .nav-links {
-          display: none;
-        }
-        .menu-toggle {
-          display: block;
-        }
-        .trust-grid {
-          grid-template-columns: 1fr;
-          gap: 32px;
-        }
-        .steps {
-          grid-template-columns: 1fr 1fr;
-        }
-        .step {
-          border-right: none;
-          border-bottom: 1px solid var(--line);
-          padding: 28px 0;
-        }
-        .step:nth-child(odd) {
-          border-right: 1px solid var(--line);
-          padding-right: 24px;
-        }
-        .region-grid,
-        .listing-grid {
-          grid-template-columns: 1fr;
-        }
-        .legal-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr 1fr;
-          gap: 32px;
-        }
-        section {
-          padding: 64px 0;
-        }
-        .hero {
-          padding: 72px 0 56px;
-        }
-      }
-      @media (max-width: 520px) {
-        .steps {
-          grid-template-columns: 1fr;
-        }
-        .step {
-          border-right: none !important;
-          padding-right: 0;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr;
-        }
-        .hero-actions {
-          flex-direction: column;
-        }
-        .btn {
-          text-align: center;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "El Comosi",
+        "url": "https://www.elcomosi.mx/",
+        "logo": "https://www.elcomosi.mx/assets/img/logo.svg",
+        "description": "Venta de terrenos con escritura en Tekom e Izamal, Yucatán, para compradores nacionales y europeos.",
+        "areaServed": ["Tekom", "Izamal", "Yucatán", "México"],
+        "availableLanguage": ["es", "en", "fr"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tekom",
+          "addressRegion": "Yucatán",
+          "addressCountry": "MX"
+        },
+        "telephone": "+52-000-000-0000",
+        "email": "contacto@elcomosi.mx"
+      }
+    </script>
   </head>
   <body>
     <!-- ============ NAV ============ -->
-    <header>
+    <header class="site-header">
       <div class="wrap">
-        <nav>
-          <a href="#" class="logo">
-            Altamira
-            <span>.</span>
+        <nav class="main-nav">
+          <a href="/" class="brand" aria-label="El Comosi — Inicio">
+            <img src="/assets/img/logo.svg" alt="Logotipo de El Comosi" />
+            <span class="brand-text">
+              El Comosi
+              <span>.</span>
+            </span>
           </a>
           <div class="nav-links">
-            <a href="#process">How It Works</a>
-            <a href="#regions">Regions</a>
-            <a href="#listings">Available Land</a>
-            <a href="#legal">Legal Guide</a>
-            <a href="#contact" class="nav-cta">Book a Consultation</a>
+            <a href="/terrenos.html">Terrenos</a>
+            <a href="/ubicacion.html">Ubicación</a>
+            <a href="/proceso.html">Proceso de compra</a>
+            <a href="/sobre-nosotros.html">Sobre nosotros</a>
           </div>
-          <button class="menu-toggle" aria-label="Menu">☰</button>
+          <div class="nav-right">
+            <div class="lang-switch" aria-label="Idioma">
+              <a href="/" class="active">ES</a>
+              <a href="/en/">EN</a>
+              <a href="/fr/">FR</a>
+            </div>
+            <a href="/contacto.html" class="nav-cta">Contacto</a>
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -641,197 +97,309 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="wrap">
-        <div class="eyebrow">Mexican Land · For European Buyers</div>
-        <h1>Own Mexican land with complete legal clarity.</h1>
+        <div class="eyebrow">Tekom · Izamal · Yucatán, México</div>
+        <h1>Terrenos con escritura en el corazón de Yucatán.</h1>
         <p>
-          We help European buyers acquire verified, regularized private land in
-          Mexico—navigating fideicomiso, due diligence, and closing, so you
-          never sign on uncertain ground.
+          Lotes de 300 m² desde €7,245 en Tekom e Izamal. Propiedad privada con
+          escritura,
+          <strong>fuera de la zona restringida</strong>
+          : compras directamente a tu nombre, sin fideicomiso. Proceso
+          verificado con Notaría 140.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Book a Consultation</a>
-          <a href="#process" class="btn btn-ghost">See Our Process</a>
+          <a href="/terrenos.html" class="btn btn-primary">
+            Ver terrenos disponibles
+          </a>
+          <a href="/proceso.html" class="btn btn-ghost">
+            Cómo comprar sin riesgos
+          </a>
+        </div>
+        <div class="hero-facts">
+          <div class="hero-fact">
+            <strong>300 m²</strong>
+            <span>por lote</span>
+          </div>
+          <div class="hero-fact">
+            <strong>€7,245</strong>
+            <span>precio de entrada</span>
+          </div>
+          <div class="hero-fact">
+            <strong>40+</strong>
+            <span>operaciones cerradas</span>
+          </div>
+          <div class="hero-fact">
+            <strong>8 años</strong>
+            <span>en Yucatán</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============ TRUST BAR ============ -->
-    <div class="trust">
+    <div class="trust-bar">
       <div class="wrap">
         <div class="trust-grid">
           <div class="trust-item">
-            <h3>Regularized private land only</h3>
-            <p>
-              Every plot we list holds clear title (escritura) and verified
-              boundary records. We do not touch ejido land.
-            </p>
+            <svg
+              class="trust-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+            <div>
+              <h3>Escritura, no promesa</h3>
+              <p>
+                Cada lote se entrega con escritura pública ante notario. Sin
+                ejidos, sin posesión informal.
+              </p>
+            </div>
           </div>
           <div class="trust-item">
-            <h3>Fideicomiso handled end-to-end</h3>
-            <p>
-              We work with licensed Mexican notaries and banks to set up your
-              trust in the restricted zone—step by step.
-            </p>
+            <svg
+              class="trust-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M8 12l3 3 5-6" />
+            </svg>
+            <div>
+              <h3>Sin fideicomiso</h3>
+              <p>
+                Tekom e Izamal están fuera de la zona restringida. Compras a tu
+                nombre, sin banco intermediario ni costos anuales.
+              </p>
+            </div>
           </div>
           <div class="trust-item">
-            <h3>Built for European buyers</h3>
-            <p>
-              English, Spanish, and French support. Clear documentation. No
-              hidden costs. No pressure.
-            </p>
+            <svg
+              class="trust-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M4 5h16v11H4z" />
+              <path d="M8 20h8M12 16v4" />
+            </svg>
+            <div>
+              <h3>Notaría 140 verificable</h3>
+              <p>
+                Trabajamos con el Lic. Faridh Armando López Valencia, Notaría
+                140. Puedes verificar cada documento de forma independiente.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ============ PROCESS ============ -->
-    <section class="process" id="process">
+    <!-- ============ PROCESO ============ -->
+    <section class="bg-white" id="proceso">
       <div class="wrap">
         <div class="section-head">
-          <h2>A process designed to remove uncertainty.</h2>
+          <h2>Un proceso claro, de principio a escritura.</h2>
           <p>
-            Land in Mexico is safe to buy—when the paperwork is done correctly.
-            Here is how we guide you from first call to keys.
+            El miedo más común de los compradores es el fraude. Por eso cada
+            paso deja un documento verificable en tus manos.
           </p>
         </div>
         <div class="steps">
           <div class="step">
             <div class="step-num">01</div>
-            <h3>Consultation</h3>
+            <h3>Contacto</h3>
             <p>
-              We discuss your goals, budget, and preferred region. No
-              obligation.
+              Nos escribes por WhatsApp. Hablamos en español, inglés o francés.
             </p>
           </div>
           <div class="step">
             <div class="step-num">02</div>
-            <h3>Shortlist</h3>
+            <h3>Selección</h3>
             <p>
-              We present verified plots with full documentation and due
-              diligence packets.
+              Eliges lote y recibes plano, ubicación exacta y datos del terreno.
             </p>
           </div>
           <div class="step">
             <div class="step-num">03</div>
-            <h3>Legal Review</h3>
+            <h3>Verificación</h3>
             <p>
-              Our notary partners confirm title, boundaries, and trust setup
-              before you commit.
+              Revisamos la escritura y antecedentes con la Notaría 140 antes de
+              cualquier anticipo.
             </p>
           </div>
           <div class="step">
             <div class="step-num">04</div>
-            <h3>Closing</h3>
+            <h3>Escrituración</h3>
             <p>
-              You receive your escritura or fideicomiso—fully registered and
-              protected.
+              Anticipo, firma ante notario y entrega de tu escritura registrada.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ REGIONS ============ -->
-    <section class="regions" id="regions">
+    <!-- ============ TERRENOS DESTACADOS ============ -->
+    <section id="terrenos">
       <div class="wrap">
         <div class="section-head">
-          <h2>Where our buyers are investing.</h2>
+          <h2>Terrenos disponibles en Tekom e Izamal.</h2>
           <p>
-            We focus on a small number of regions where land title is clear,
-            infrastructure is reliable, and European demand is growing.
+            Lotes de 300 m² en desarrollos con acceso pavimentado, agua y
+            electricidad cercanas.
           </p>
         </div>
-        <div class="region-grid">
-          <div class="region-card">
-            <div class="region-img r1"></div>
-            <div class="region-body">
-              <h3>Riviera Maya</h3>
-              <p>
-                Tulum, Playa del Carmen, Bacalar. Strong short-term rental
-                yields and consistent European demand.
-              </p>
-              <div class="region-meta">Coastal · Fideicomiso</div>
+        <div class="card-grid">
+          <article class="card">
+            <div
+              class="card-img"
+              style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80');"
+            >
+              <span class="badge">Escritura verificada</span>
             </div>
-          </div>
-          <div class="region-card">
-            <div class="region-img r2"></div>
-            <div class="region-body">
-              <h3>Los Cabos & Baja</h3>
-              <p>
-                Premium coastal land with established infrastructure and a
-                mature luxury market.
-              </p>
-              <div class="region-meta">Coastal · Fideicomiso</div>
+            <div class="card-body">
+              <h3>Lote en Tekom</h3>
+              <div class="card-loc">
+                Tekom, Yucatán · Cerca de Valladolid y Chichén Itzá
+              </div>
+              <div class="card-specs">
+                <div>
+                  <div class="spec-label">Superficie</div>
+                  <div class="spec-val">300 m²</div>
+                </div>
+                <div>
+                  <div class="spec-label">Título</div>
+                  <div class="spec-val">Escritura privada</div>
+                </div>
+                <div>
+                  <div class="spec-label">Desde</div>
+                  <div class="spec-val price-tag">€7,245</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="region-card">
-            <div class="region-img r3"></div>
-            <div class="region-body">
-              <h3>Lake Chapala & Central Highlands</h3>
-              <p>
-                Inland, mild climate, large expat community. Private land
-                outside the restricted zone.
-              </p>
-              <div class="region-meta">Inland · Direct Title</div>
+          </article>
+          <article class="card">
+            <div
+              class="card-img"
+              style="background-image:url('https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=800&q=80');"
+            >
+              <span class="badge">Escritura verificada</span>
             </div>
-          </div>
+            <div class="card-body">
+              <h3>Lote en Izamal</h3>
+              <div class="card-loc">
+                Izamal, Yucatán · Pueblo Mágico, 1 h de Mérida
+              </div>
+              <div class="card-specs">
+                <div>
+                  <div class="spec-label">Superficie</div>
+                  <div class="spec-val">300 m²</div>
+                </div>
+                <div>
+                  <div class="spec-label">Título</div>
+                  <div class="spec-val">Escritura privada</div>
+                </div>
+                <div>
+                  <div class="spec-label">Desde</div>
+                  <div class="spec-val price-tag">€7,245</div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div
+              class="card-img"
+              style="background-image:url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80');"
+            >
+              <span class="badge">Acceso pavimentado</span>
+            </div>
+            <div class="card-body">
+              <h3>Lote con servicios</h3>
+              <div class="card-loc">
+                Zona Tekom · Agua y electricidad cercanas
+              </div>
+              <div class="card-specs">
+                <div>
+                  <div class="spec-label">Superficie</div>
+                  <div class="spec-val">300 m²</div>
+                </div>
+                <div>
+                  <div class="spec-label">Título</div>
+                  <div class="spec-val">Escritura privada</div>
+                </div>
+                <div>
+                  <div class="spec-label">Desde</div>
+                  <div class="spec-val price-tag">€7,245</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div style="text-align:center;margin-top:44px;">
+          <a href="/terrenos.html" class="btn btn-dark">
+            Ver todos los terrenos
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ============ LEGAL ============ -->
-    <div class="legal" id="legal">
+    <!-- ============ ANTI-FRAUDE ============ -->
+    <div class="band-dark" id="legal">
       <div class="wrap">
-        <div class="legal-grid">
+        <div class="band-grid">
           <div>
-            <h2>Mexican land law, explained plainly.</h2>
+            <h2>Comprar en México es seguro cuando el papel es correcto.</h2>
             <p>
-              Most hesitation around Mexican land comes from not understanding
-              the rules. We put the key facts in front of you before you commit
-              a single euro.
+              No pedimos anticipos sin documentación. No vendemos ejidos. No
+              prometemos lo que la ley no permite. Así te protegemos.
             </p>
-            <a href="#contact" class="btn btn-primary">
-              Request the Legal Guide
+            <a href="/proceso.html" class="btn btn-primary">
+              Ver el proceso completo
             </a>
           </div>
-          <ul class="legal-list">
+          <ul class="check-list">
             <li>
               <div class="dot"></div>
               <div>
-                <strong>Fideicomiso (Bank Trust)</strong>
+                <strong>Escritura antes que anticipo</strong>
                 <span>
-                  Required for land within 50km of coast or 100km of border. You
-                  hold full ownership rights through a Mexican bank.
+                  Recibes copia de la escritura y antecedentes registrales para
+                  revisión independiente.
                 </span>
               </div>
             </li>
             <li>
               <div class="dot"></div>
               <div>
-                <strong>Ejido vs. Private Land</strong>
+                <strong>Sin zona restringida</strong>
                 <span>
-                  Ejido is communal land and a common trap for foreign buyers.
-                  We only work with regularized private property.
+                  Tekom e Izamal permiten compra directa a nombre del comprador
+                  extranjero, sin fideicomiso.
                 </span>
               </div>
             </li>
             <li>
               <div class="dot"></div>
               <div>
-                <strong>Uso de Suelo (Land Use)</strong>
+                <strong>Notaría 140</strong>
                 <span>
-                  Zoning determines what you can build. We verify this before
-                  any listing reaches you.
+                  Lic. Faridh Armando López Valencia. Notario público con fe
+                  pública en Yucatán.
                 </span>
               </div>
             </li>
             <li>
               <div class="dot"></div>
               <div>
-                <strong>Closing Costs & Taxes</strong>
+                <strong>Acompañamiento post-venta</strong>
                 <span>
-                  Expect roughly 4–7% in acquisition costs. We provide a full
-                  breakdown upfront.
+                  Te conectamos con construcción, administración y asesoría
+                  legal después de la compra.
                 </span>
               </div>
             </li>
@@ -840,149 +408,135 @@
       </div>
     </div>
 
-    <!-- ============ LISTINGS ============ -->
-    <section class="listings" id="listings">
+    <!-- ============ UBICACIÓN ============ -->
+    <section class="bg-sand" id="ubicacion">
       <div class="wrap">
         <div class="section-head">
-          <h2>Available land, verified.</h2>
+          <h2>Dos Yucatán en una sola compra.</h2>
           <p>
-            A selection of currently available plots. Each comes with a due
-            diligence packet on request.
+            Tekom te acerca a cenotes, Valladolid y Chichén Itzá. Izamal te
+            conecta con Mérida y la vida de Pueblo Mágico.
           </p>
         </div>
-        <div class="listing-grid">
-          <div class="listing-card">
-            <div class="listing-img l1">
-              <span class="badge">Verified Title</span>
+        <div class="card-grid">
+          <article class="card">
+            <div
+              class="card-img"
+              style="background-image:url('https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=800&q=80');"
+            ></div>
+            <div class="card-body">
+              <h3>Tekom</h3>
+              <div class="card-loc">Oriente de Yucatán</div>
+              <p style="font-size:0.9rem;color:var(--muted);font-weight:300;">
+                Cerca de Valladolid, cenotes y Chichén Itzá. Zona de naturaleza
+                y crecimiento turístico.
+              </p>
             </div>
-            <div class="listing-body">
-              <h3>Coastal Plot · Tulum</h3>
-              <div class="listing-loc">Quintana Roo, Mexico</div>
-              <div class="listing-specs">
-                <div>
-                  <div class="spec-label">Size</div>
-                  <div class="spec-val">2,400 m²</div>
-                </div>
-                <div>
-                  <div class="spec-label">Title</div>
-                  <div class="spec-val">Fideicomiso</div>
-                </div>
-                <div>
-                  <div class="spec-label">From</div>
-                  <div class="spec-val">€185,000</div>
-                </div>
-              </div>
+          </article>
+          <article class="card">
+            <div
+              class="card-img"
+              style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80');"
+            ></div>
+            <div class="card-body">
+              <h3>Izamal</h3>
+              <div class="card-loc">Centro de Yucatán</div>
+              <p style="font-size:0.9rem;color:var(--muted);font-weight:300;">
+                Pueblo Mágico amarillo, a una hora de Mérida. Cultura,
+                gastronomía y comunidad establecida.
+              </p>
             </div>
-          </div>
-          <div class="listing-card">
-            <div class="listing-img l2">
-              <span class="badge">Verified Title</span>
+          </article>
+          <article class="card">
+            <div
+              class="card-img"
+              style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80');"
+            ></div>
+            <div class="card-body">
+              <h3>Mérida y la costa</h3>
+              <div class="card-loc">A 1–2 horas</div>
+              <p style="font-size:0.9rem;color:var(--muted);font-weight:300;">
+                Aeropuerto internacional, hospitales, playas de Progreso y
+                servicios urbanos completos.
+              </p>
             </div>
-            <div class="listing-body">
-              <h3>Hillside Land · Los Cabos</h3>
-              <div class="listing-loc">Baja California Sur, Mexico</div>
-              <div class="listing-specs">
-                <div>
-                  <div class="spec-label">Size</div>
-                  <div class="spec-val">1,800 m²</div>
-                </div>
-                <div>
-                  <div class="spec-label">Title</div>
-                  <div class="spec-val">Fideicomiso</div>
-                </div>
-                <div>
-                  <div class="spec-label">From</div>
-                  <div class="spec-val">€240,000</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="listing-card">
-            <div class="listing-img l3">
-              <span class="badge">Verified Title</span>
-            </div>
-            <div class="listing-body">
-              <h3>Lakeview Plot · Chapala</h3>
-              <div class="listing-loc">Jalisco, Mexico</div>
-              <div class="listing-specs">
-                <div>
-                  <div class="spec-label">Size</div>
-                  <div class="spec-val">3,200 m²</div>
-                </div>
-                <div>
-                  <div class="spec-label">Title</div>
-                  <div class="spec-val">Direct Deed</div>
-                </div>
-                <div>
-                  <div class="spec-label">From</div>
-                  <div class="spec-val">€95,000</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="cta" id="contact">
+    <section class="cta">
       <div class="wrap">
-        <h2>Start with a conversation, not a commitment.</h2>
+        <h2>Empieza con una conversación, no con un anticipo.</h2>
         <p>
-          Tell us what you are looking for. We will send you a shortlist, a
-          legal overview, and a clear next step—within 48 hours.
+          Escríbenos por WhatsApp. Te enviamos planos, escritura y ubicación
+          exacta de los lotes disponibles.
         </p>
-        <a href="#" class="btn btn-primary">Book a Consultation</a>
+        <a
+          href="https://wa.me/520000000000?text=Hola%2C%20me%20interesan%20los%20terrenos%20en%20Yucat%C3%A1n"
+          class="btn btn-wa"
+        >
+          Hablar por WhatsApp
+        </a>
       </div>
     </section>
 
     <!-- ============ FOOTER ============ -->
-    <footer>
+    <footer class="site-footer">
       <div class="wrap">
         <div class="footer-grid">
           <div>
             <div class="footer-brand">
-              Altamira
-              <span>.</span>
+              <img src="/assets/img/logo.svg" alt="El Comosi" />
+              <span>El Comosi</span>
             </div>
             <p style="max-width:34ch;font-weight:300;line-height:1.7;">
-              Verified Mexican land for European buyers. Clear title. Clear
-              process. Clear communication.
+              Terrenos con escritura en Tekom e Izamal, Yucatán. Compra directa,
+              sin fideicomiso, con acompañamiento notarial.
             </p>
           </div>
           <div class="footer-col">
-            <h4>Explore</h4>
-            <a href="#regions">Regions</a>
-            <a href="#listings">Available Land</a>
-            <a href="#process">How It Works</a>
+            <h4>Explorar</h4>
+            <a href="/terrenos.html">Terrenos</a>
+            <a href="/ubicacion.html">Ubicación</a>
+            <a href="/proceso.html">Proceso de compra</a>
           </div>
           <div class="footer-col">
-            <h4>Learn</h4>
-            <a href="#legal">Legal Guide</a>
-            <a href="#">Fideicomiso FAQ</a>
-            <a href="#">Buyer's Checklist</a>
+            <h4>Compañía</h4>
+            <a href="/sobre-nosotros.html">Sobre nosotros</a>
+            <a href="/contacto.html">Contacto</a>
           </div>
           <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="#">hello@altamira.land</a>
-            <a href="#">WhatsApp</a>
-            <a href="#">Book a Call</a>
+            <h4>Contacto</h4>
+            <a href="https://wa.me/520000000000">WhatsApp</a>
+            <a href="mailto:contacto@elcomosi.mx">contacto@elcomosi.mx</a>
+            <a href="tel:+520000000000">+52 000 000 0000</a>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2026 Altamira Land. All rights reserved.</span>
-          <span>Privacy Notice (Aviso de Privacidad) · Terms</span>
+          <span>
+            ©
+            <span data-year>2026</span>
+            El Comosi. Todos los derechos reservados.
+          </span>
+          <span>Aviso de Privacidad · Términos</span>
         </div>
       </div>
     </footer>
 
-    <!-- ============ WHATSAPP ============ -->
-    <a href="#" class="whatsapp" aria-label="WhatsApp">
+    <a
+      href="https://wa.me/520000000000?text=Hola%2C%20me%20interesan%20los%20terrenos%20en%20Yucat%C3%A1n"
+      class="whatsapp"
+      aria-label="WhatsApp"
+    >
       <svg viewBox="0 0 24 24">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
         />
       </svg>
     </a>
+
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
